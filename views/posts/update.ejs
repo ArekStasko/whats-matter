@@ -1,0 +1,26 @@
+<% layout('layouts/boilerplate') %>
+
+<h1>Update Post</h1>
+<div class="card container-sm offset-3" style="width: 30rem;">
+    <div class="card-body">
+        <form action="/posts/<%=post._id%>?_method=PUT" method="POST">
+            <div class="mb-3">
+                <label for="title" class="form-label">Update Topic:</label>
+                <input type="text" class="form-control" id="title" name="post[title]" placeholder="Topic" value="<%=post.title%>">
+              </div>
+              <label for="category">Update Category</label>
+              <select class="form-select" name="post[category]" id="category">
+                <%for(let category of categories){%>
+                <option value="<%=category%>"><%=category%></option>
+                <% } %>
+              </select>
+              <div class="mb-3">
+                <label for="description" class="form-label">Update text:</label>
+                <textarea type="text" class="form-control" id="description" name="post[description]"><%=post.description%></textarea>
+              </div>
+              <div class="mb-3">
+                <button class="btn btn-dark">Add</button>
+              </div>
+        </form>
+    </div>
+  </div>

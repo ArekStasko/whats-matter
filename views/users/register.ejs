@@ -1,0 +1,32 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="form-wrapper container card p-4">
+
+<img 
+src="https://images.unsplash.com/photo-1495472987612-92395b142182?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" 
+class="card-img-top" 
+alt="JellyFish"
+>
+
+<form class="validated-form" action='/register' method="POST" novalidate>
+
+ <div class="container card p-3">
+<div class="mb-3">
+<label  for="email">Email</label>
+<input class="form-control" type="text" id="email" name="email" placeholder="Email" required>
+</div>
+
+<div class="mb-3">
+  <label  for="username">Username</label>
+  <input class="form-control" type="text" id="username" name="username" placeholder="Username" required>
+</div>
+
+<div class="mb-3">
+  <label  for="password">Password</label>
+  <input class="form-control" type="password" id="password" name="password" placeholder="Password" required>
+</div>
+
+<button class="btn btn-success">Register</button>
+</div>
+</form>
+</div>

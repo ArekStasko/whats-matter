@@ -1,0 +1,26 @@
+<% layout('layouts/boilerplate') %>
+<div class="form-wrapper container card p-4">
+<div class="card container-sm">
+    <div class="card-body">
+        <form class="validated-form" action="/posts" method="POST" novalidate >
+            <div class="mb-3">
+                <label for="title" class="form-label">Topic:</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Topic" required>
+              </div>
+              <label for="category">Select Category</label>
+              <select class="form-select" name="category" id="category">
+                <%for(let category of categories){%>
+                <option value="<%=category%>"><%=category%></option>
+                <% } %>
+              </select>
+              <div class="mb-3">
+                <label for="description" class="form-label">Your text:</label>
+                <textarea type="text" class="form-control" id="description" name="description" required></textarea>
+              </div>
+              <div class="mb-3">
+                <button class="btn btn-dark">Add</button>
+              </div>
+        </form>
+    </div>
+  </div>
+</div>
