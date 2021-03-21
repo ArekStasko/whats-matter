@@ -16,7 +16,7 @@ const LocalStrategy = require('passport-local')
 const User = require('./models/users')
 const dbUrl = process.env.MNG
 const srt = process.env.SECRET
-
+const port = process.env.PORT
 
 const postsRoutes = require('./routes/postsRoutes')
 const commentsRouter = require('./routes/comments')
@@ -93,8 +93,8 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render('error', { err })
 })
 
-app.listen(3000, ()=> {
-    console.log('Serving on port 3000')
+app.listen(port, ()=> {
+    console.log(`Serving on port ${port}`)
 })
 
 
